@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login Page</title>
+		<LINK REL="STYLESHEET" HREF="../styles/style.css" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+		<script  type="text/javascript" src="../js/jquery.xml2json.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script>
+			$(document).ready (
+				function (){
+					$('#loginForm').click (
+						function (event) {
+							event.preventDefault();
+							$('#info').html("comprobando...");
+							ValidateUser();
+						}
+					);
+				}
+			);
+		</script>
+	</head>
+
+	<body>
+		<div id="registration">
+			<h2>Login Account</h2>
+			<form id="registerUserForm">
+				<fieldset>
+					<p>
+						<input id="txtUserName" type="text" required="required"
+							autofocus="autofocus" placeholder="User Name"/>
+					</p>
+					<p>
+						<input id="txtPassword" type="password"
+							required="required" placeholder="Password" />
+					</p>	
+					<p>
+						<input type="button" id="loginForm" value="Login"/>
+					</p>
+				</fieldset>
+			</form>
+		</div>
+		
+		<span id="info"></span>
+	</body>
+</html>
+

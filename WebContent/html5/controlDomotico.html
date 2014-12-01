@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="ISO-8859-1">
+		<title>Control domótico</title>
+		<LINK REL="STYLESHEET" HREF="../styles/style.css" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		
+		
+		<script>
+			$(document).ready (
+					
+				function (){
+					printUserInfo("userInfo");
+					
+					$('#estancias').click(function(){
+						window.location = 'estancias.html';
+					});
+					$('#defEscena').click(function(){
+						window.location= 'escenas.html'
+					});
+					
+				 	$("#showHidde").click(function(){
+				 		
+					    if($("#manual").is(':visible') && $("#element").parents (':hidden').length == 0){
+					    	$('#flecha').attr({
+								'src': '../images/Flecha-2.png',							
+							});
+					    	$("#manual").toggle();
+					    	
+					    }
+					    else{
+					    	$('#flecha').attr({
+								'src': '../images/Flecha-1.png',							
+							});
+					    	$("#manual").toggle();
+					    	
+					    }
+					    
+				 	});
+					
+				}
+				
+				 
+			);
+			
+			
+		</script>
+		
+	</head>
+	
+	<body>
+		
+		
+		<div id="panel" class="general">
+			<div id="userInfo" class="userInfo"></div>
+			
+			<a href="#" id="showHidde" > <img class="imgCdomot" src='../images/Header-Manual.png'>
+						<img id="flecha" class="imgFlechas" src='../images/Flecha-2.png'></a>
+			
+			
+			<div id="manual" style="display: none;">
+				<img id="estancias" class="imgCdomot" src='../images/Estancias.png'>
+			    <img id="defEscena" class="imgCdomot" src='../images/definir-escena.png'>
+			</div> 
+			
+			
+			<a href="#" id="showHidde" > <img class="imgCdomot" src='../images/RA.png'>
+						<img id="flecha" class="imgFlechas" src='../images/Flecha-2.png'></a>
+			
+			
+			
+			
+			
+		</div>
+		
+			  
+			  
+	</body>
+</html>

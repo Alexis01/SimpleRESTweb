@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+		<script type="text/javascript" src="../js/app.js"></script>
+		<script type="text/javascript" src="../js/dispositivos.js"></script>
+		<script type="text/javascript" src="../js/acciones.js"></script>
+		<script type="text/javascript" src="../js/config.js"></script>
+		<script type="text/javascript" src="../js/estancias.js"></script>
+		<script type="text/javascript" src="../js/obs/ConfigParameter.js"></script>
+		<script type="text/javascript" src="../js/obs/Device.js"></script>
+		<script type="text/javascript" src="../js/obs/Location.js"></script>
+		<script type="text/javascript" src="../js/obs/Installation.js"></script>
+		<script type="text/javascript" src="../js/jquery.xml2json.js"></script>
+		<script type="text/javascript">
+		$(document).ready (
+				function (){
+					//var acciones = getAccionesDispositivo("HAUS_DEVICE_5646389455648364577");
+					//alert(acciones);
+					
+					//var dispositivo = getDispositivo("HAUS_DEVICE_5646389455648364577");
+					//alert(dispositivo);
+					
+					//var dispositivos = getDispositivosEstancia ("HAUS_LOCATION_4545764642786864567468");
+					//alert(dispositivos);
+					
+					//var estancias = getEstancias();
+					//alert(estancias);
+					
+					/*var configParameter = new ConfigParameter();
+					
+					configParameter.setIdRef('idRef');
+					configParameter.setValue('1/2/3');
+					
+					configParameter.buildXML('<ConfigParameter idRef="HAUS_IIA_KNX_ALARM_LIGHT_1.0.1_ADDRESS" idDB="" value="1/0/0" db_status="NEW"/>');
+					
+					configParameter.addArrElement("1");
+					configParameter.addArrElement("2");
+					configParameter.addArrElement("3");
+					
+					jQuery.each(configParameter.getArr(), function(key, value){
+						alert(key + ":" + value);
+					});
+					
+					alert(configParameter.getAdress());*/
+					
+					/*var xml = '<Device id="HAUS_DEVICE_TEbRUXw6QXXEe8O" idDB="" db_status="NEW" name="AlarmLighting" type="HAUS_DEVICE_TYPE_ACTUATOR_ALARM_LIGHT" technology="HAUS_TECHNOLOGY_KNX" manufacturer="" manufacturerURL="" modelName="" serialNumber="">'+
+      							'<DeviceInterfaces>'+
+        						'<DeviceInterface idRef="HAUS_INTERFACE_KNX_ALARM_LIGHT_1.0.1" idDB="" db_status="NEW">'+
+          						'<ConfigParameter idRef="HAUS_IIA_KNX_ALARM_LIGHT_1.0.1_ADDRESS" idDB="" value="1/0/0" db_status="NEW"/>'+
+        						'</DeviceInterface>'+
+      							'</DeviceInterfaces>'+
+    							'</Device>';
+					
+					var device = new Device();
+					device.buildFromXML(xml);
+					
+					alert(device.name);
+					jQuery.each(device.getConfigParameters(), function(){
+						alert(this.idRef + ":" + this.getAdress());
+					});*/
+					
+					var xml = '<?xml version="1.0" encoding="UTF-8"?> <Installation '+
+					'id="HAUS_INSTALLATION_cpLwHvXAupl7WSM" version="1"                      '+
+					'name="ConfigurationTest" interfacesSpecificationVersion="1.0.1">        '+
+					'<Devices> <Device id="HAUS_DEVICE_TEbRUXw6QXXEe8O" idDB=""              '+
+					'db_status="NEW" name="AlarmLighting"                                    '+
+					'type="HAUS_DEVICE_TYPE_ACTUATOR_ALARM_LIGHT"                            '+
+					'technology="HAUS_TECHNOLOGY_KNX" manufacturer="" manufacturerURL=""     '+
+					'modelName="" serialNumber=""> <DeviceInterfaces> <DeviceInterface       '+
+					'idRef="HAUS_INTERFACE_KNX_ALARM_LIGHT_1.0.1" idDB="" db_status="NEW">   '+
+					'<ConfigParameter idRef="HAUS_IIA_KNX_ALARM_LIGHT_1.0.1_ADDRESS" idDB="" '+
+					'value="1/0/0" db_status="NEW"/> </DeviceInterface> </DeviceInterfaces>  '+
+					'</Device> <Device id="HAUS_DEVICE_Ykk14vkaWlxpRYi" idDB=""              '+
+					'db_status="NEW" name="IndoorThermometer"                                '+
+					'type="HAUS_DEVICE_TYPE_SENSOR_THERMOSTAT"                               '+
+					'technology="HAUS_TECHNOLOGY_KNX" manufacturer="" manufacturerURL=""     '+
+					'modelName="" serialNumber=""> <DeviceInterfaces> <DeviceInterface       '+
+					'idRef="HAUS_INTERFACE_KNX_THERMOMETER_1.0.1" idDB="" db_status="NEW">   '+
+					'<ConfigParameter idRef="HAUS_IIA_KNX_THERMOMETER_1.0.1_ADDRESS" idDB="" '+
+					'value="1/4/6" db_status="NEW"/> </DeviceInterface> </DeviceInterfaces>  '+
+					'</Device> <Device id="HAUS_DEVICE_xgRTExMkhkrQvKt" idDB=""              '+
+					'db_status="NEW" name="IndoorAlarmSound"                                 '+
+					'type="HAUS_DEVICE_TYPE_ACTUATOR_ALARM_SOUND"                            '+
+					'technology="HAUS_TECHNOLOGY_KNX" manufacturer="" manufacturerURL=""     '+
+					'modelName="" serialNumber=""> <DeviceInterfaces> <DeviceInterface       '+
+					'idRef="HAUS_INTERFACE_KNX_ALARM_SOUND_1.0.1" idDB="" db_status="NEW">   '+
+					'<ConfigParameter idRef="HAUS_IIA_KNX_ALARM_SOUND_1.0.1_ADDRESS" idDB="" '+
+					'value="1/1/1" db_status="NEW"/> </DeviceInterface> </DeviceInterfaces>  '+
+					'</Device> <Device id="HAUS_DEVICE_Jyjh5h3Ubaa7uXS" idDB=""              '+
+					'db_status="NEW" name="GardenThermometer"                                '+
+					'type="HAUS_DEVICE_TYPE_SENSOR_THERMOSTAT"                               '+
+					'technology="HAUS_TECHNOLOGY_KNX" manufacturer="" manufacturerURL=""     '+
+					'modelName="" serialNumber=""> <DeviceInterfaces> <DeviceInterface       '+
+					'idRef="HAUS_INTERFACE_KNX_THERMOMETER_1.0.1" idDB="" db_status="NEW">   '+
+					'<ConfigParameter idRef="HAUS_IIA_KNX_THERMOMETER_1.0.1_ADDRESS" idDB="" '+
+					'value="1/4/1" db_status="NEW"/> </DeviceInterface> </DeviceInterfaces>  '+
+					'</Device> <Device id="HAUS_DEVICE_ClDKv5gHLnA8XHN" idDB=""              '+
+					'db_status="NEW" name="GradualLight"                                     '+
+					'type="HAUS_DEVICE_TYPE_ACTUATOR_GRADUAL_LIGHT"                          '+
+					'technology="HAUS_TECHNOLOGY_KNX" manufacturer="" manufacturerURL=""     '+
+					'modelName="" serialNumber=""> <DeviceInterfaces> <DeviceInterface       '+
+					'idRef="HAUS_INTERFACE_KNX_GRADUAL_LIGHTING_1.0.1" idDB=""               '+
+					'db_status="NEW"> <ConfigParameter                                       '+
+					'idRef="HAUS_IIA_KNX_GRADUAL_LIGHTING_1.0.1_ADDRESS" idDB=""             '+
+					'value="1/0/5" db_status="NEW"/> </DeviceInterface> </DeviceInterfaces>  '+
+					'</Device> <Device id="HAUS_DEVICE_psgbRfR4pwp3TMx" idDB=""              '+
+					'db_status="NEW" name="Blind" type="HAUS_DEVICE_TYPE_ACTUATOR_BLIND"     '+
+					'technology="HAUS_TECHNOLOGY_KNX" manufacturer="" manufacturerURL=""     '+
+					'modelName="" serialNumber=""> <DeviceInterfaces> <DeviceInterface       '+
+					'idRef="HAUS_INTERFACE_KNX_BLIND_1.0.1" idDB="" db_status="NEW">         '+
+					'<ConfigParameter idRef="HAUS_IIA_KNX_BLIND_1.0.1_ADDRESS" idDB=""       '+
+					'value="1/6/11" db_status="NEW"/> <ConfigParameter                       '+
+					'idRef="HAUS_IIA_KNX_BLIND_1.0.1_STOP_ADDRESS" idDB="" value="1/6/10"    '+
+					'db_status="NEW"/> </DeviceInterface> </DeviceInterfaces> </Device>      '+
+					'<Device id="HAUS_DEVICE_vdPRxL03VzuCNIb" idDB="" db_status="NEW"        '+
+					'name="ElectroValve" type="HAUS_DEVICE_TYPE_SENSOR_OTHER"                '+
+					'technology="HAUS_TECHNOLOGY_KNX" manufacturer="" manufacturerURL=""     '+
+					'modelName="" serialNumber=""> <DeviceInterfaces> <DeviceInterface       '+
+					'idRef="HAUS_INTERFACE_KNX_ELECTRO_VALVE_1.0.1" idDB="" db_status="NEW"> '+
+					'<ConfigParameter idRef="HAUS_IIA_KNX_ELECTRO_VALVE_1.0.1_ADDRESS"       '+
+					'idDB="" value="0/0/10" db_status="NEW"/> </DeviceInterface>             '+
+					'</DeviceInterfaces> </Device> <Device id="HAUS_DEVICE_KOvMd12yWvYxlvi"  '+
+					'idDB="" db_status="NEW" name="KitchenLighting"                          '+
+					'type="HAUS_DEVICE_TYPE_ACTUATOR_LIGHT" technology="HAUS_TECHNOLOGY_KNX" '+
+					'manufacturer="" manufacturerURL="" modelName="" serialNumber="">        '+
+					'<DeviceInterfaces> <DeviceInterface                                     '+
+					'idRef="HAUS_INTERFACE_KNX_LIGHTING_1.0.1" idDB="" db_status="NEW">      '+
+					'<ConfigParameter idRef="HAUS_IIA_KNX_LIGHTING_1.0.1_ADDRESS" idDB=""    '+
+					'value="1/0/1" db_status="NEW"/> </DeviceInterface> </DeviceInterfaces>  '+
+					'</Device> <Device id="HAUS_DEVICE_39jPi84BKAIg86s" idDB=""              '+
+					'db_status="NEW" name="HallLighting"                                     '+
+					'type="HAUS_DEVICE_TYPE_ACTUATOR_LIGHT" technology="HAUS_TECHNOLOGY_KNX" '+
+					'manufacturer="" manufacturerURL="" modelName="" serialNumber="">        '+
+					'<DeviceInterfaces> <DeviceInterface                                     '+
+					'idRef="HAUS_INTERFACE_KNX_LIGHTING_1.0.1" idDB="" db_status="NEW">      '+
+					'<ConfigParameter idRef="HAUS_IIA_KNX_LIGHTING_1.0.1_ADDRESS" idDB=""    '+
+					'value="1/0/2" db_status="NEW"/> </DeviceInterface> </DeviceInterfaces>  '+
+					'</Device> <Device id="HAUS_DEVICE_HsQHqdVuBcy4p97" idDB=""              '+
+					'db_status="NEW" name="BrightnessMeter"                                  '+
+					'type="HAUS_DEVICE_TYPE_SENSOR_BRIGHTNESS_METER"                         '+
+					'technology="HAUS_TECHNOLOGY_KNX" manufacturer="" manufacturerURL=""     '+
+					'modelName="" serialNumber=""> <DeviceInterfaces> <DeviceInterface       '+
+					'idRef="HAUS_INTERFACE_KNX_BRIGHTNESS_METER_1.0.1" idDB=""               '+
+					'db_status="NEW"> <ConfigParameter                                       '+
+					'idRef="HAUS_IIA_KNX_BRIGHTNESS_METER_1.0.1_ADDRESS" idDB=""             '+
+					'value="1/4/5" db_status="NEW"/> </DeviceInterface> </DeviceInterfaces>  '+
+					'</Device> <Device id="HAUS_DEVICE_L8qSXfr3rXPGMRj" idDB=""              '+
+					'db_status="NEW" name="IndoorMovementDetector"                           '+
+					'type="HAUS_DEVICE_TYPE_SENSOR_MOVEMENT" technology="HAUS_TECHNOLOGY_KNX"'+
+					'manufacturer="" manufacturerURL="" modelName="" serialNumber="">        '+
+					'<DeviceInterfaces> <DeviceInterface                                     '+
+					'idRef="HAUS_INTERFACE_KNX_MOVEMENT_DETECTOR_1.0.1" idDB=""              '+
+					'db_status="NEW"> <ConfigParameter                                       '+
+					'idRef="HAUS_IIA_KNX_MOVEMENT_DETECTOR_1.0.1_ADDRESS" idDB=""            '+
+					'value="1/4/8" db_status="NEW"/> </DeviceInterface> </DeviceInterfaces>  '+
+					'</Device> <Device id="HAUS_DEVICE_KyLGOE8JIngHIJP" idDB=""              '+
+					'db_status="NEW" name="Fan" type="HAUS_DEVICE_TYPE_ACTUATOR_FAN"         '+
+					'technology="HAUS_TECHNOLOGY_KNX" manufacturer="" manufacturerURL=""     '+
+					'modelName="" serialNumber=""> <DeviceInterfaces> <DeviceInterface       '+
+					'idRef="HAUS_INTERFACE_KNX_FAN_1.0.1" idDB="" db_status="NEW">           '+
+					'<ConfigParameter idRef="HAUS_IIA_KNX_FAN_1.0.1_ADDRESS" idDB=""         '+
+					'value="1/2/1" db_status="NEW"/> </DeviceInterface> </DeviceInterfaces>  '+
+					'</Device> </Devices> <Locations> <Location                              '+
+					'id="HAUS_LOCATION_e13F4w0FSrRRIHn" idDB="" db_status="NEW" name="Home"  '+
+					'type="HAUS_LOCATION_TYPE_HOME" root="1"> <ChildLocations> <ChildLocation'+
+					'idRef="HAUS_LOCATION_OYcogrfyvSfPJzS"/> <ChildLocation                  '+
+					'idRef="HAUS_LOCATION_w6IHQ0oZnIH1dfG"/> <ChildLocation                  '+
+					'idRef="HAUS_LOCATION_1OLEaQlYm9QKkSZ"/> <ChildLocation                  '+
+					'idRef="HAUS_LOCATION_jJ9wZJ4EqkDypm7"/> <ChildLocation                  '+
+					'idRef="HAUS_LOCATION_b8i2wwcWsC3lCY6"/> </ChildLocations>               '+
+					'<LocationDevices> <LocationDevice idRef="HAUS_DEVICE_TEbRUXw6QXXEe8O"/> '+
+					'<LocationDevice idRef="HAUS_DEVICE_xgRTExMkhkrQvKt"/> <LocationDevice   '+
+					'idRef="HAUS_DEVICE_vdPRxL03VzuCNIb"/> </LocationDevices> </Location>    '+
+					'<Location id="HAUS_LOCATION_OYcogrfyvSfPJzS" idDB="" db_status="NEW"    '+
+					'name="Garden" type="HAUS_LOCATION_TYPE_GARDEN" root="0"> <ParentLocation'+
+					'idRef="HAUS_LOCATION_e13F4w0FSrRRIHn"/> <LocationDevices>               '+
+					'<LocationDevice idRef="HAUS_DEVICE_Jyjh5h3Ubaa7uXS"/> <LocationDevice   '+
+					'idRef="HAUS_DEVICE_HsQHqdVuBcy4p97"/> </LocationDevices> </Location>    '+
+					'<Location id="HAUS_LOCATION_w6IHQ0oZnIH1dfG" idDB="" db_status="NEW"    '+
+					'name="Kitchen" type="HAUS_LOCATION_TYPE_KITCHEN" root="0">              '+
+					'<ParentLocation idRef="HAUS_LOCATION_e13F4w0FSrRRIHn"/>                 '+
+					'<LocationDevices> <LocationDevice idRef="HAUS_DEVICE_KOvMd12yWvYxlvi"/> '+
+					'</LocationDevices> </Location> <Location                                '+
+					'id="HAUS_LOCATION_1OLEaQlYm9QKkSZ" idDB="" db_status="NEW"              '+
+					'name="Bedroom" type="HAUS_LOCATION_TYPE_BEDROOM" root="0">              '+
+					'<ParentLocation idRef="HAUS_LOCATION_e13F4w0FSrRRIHn"/>                 '+
+					'<LocationDevices> <LocationDevice idRef="HAUS_DEVICE_ClDKv5gHLnA8XHN"/> '+
+					'<LocationDevice idRef="HAUS_DEVICE_psgbRfR4pwp3TMx"/> </LocationDevices>'+
+					'</Location> <Location id="HAUS_LOCATION_jJ9wZJ4EqkDypm7" idDB=""        '+
+					'db_status="NEW" name="Office" type="HAUS_LOCATION_TYPE_OFFICE" root="0">'+
+					'<ParentLocation idRef="HAUS_LOCATION_e13F4w0FSrRRIHn"/>                 '+
+					'<LocationDevices> <LocationDevice idRef="HAUS_DEVICE_Ykk14vkaWlxpRYi"/> '+
+					'<LocationDevice idRef="HAUS_DEVICE_KyLGOE8JIngHIJP"/> <LocationDevice   '+
+					'idRef="HAUS_DEVICE_L8qSXfr3rXPGMRj"/> </LocationDevices> </Location>    '+
+					'<Location id="HAUS_LOCATION_b8i2wwcWsC3lCY6" idDB="" db_status="NEW"    '+
+					'name="Hall" type="HAUS_LOCATION_TYPE_OTHER_LOCATION" root="0">          '+
+					'<ParentLocation idRef="HAUS_LOCATION_e13F4w0FSrRRIHn"/>                 '+
+					'<LocationDevices> <LocationDevice idRef="HAUS_DEVICE_39jPi84BKAIg86s"/> '+
+					'</LocationDevices> </Location> </Locations> <InstallationParameters/>   '+
+					'<Users/> </Installation>';
+
+					
+					/*var location = new Location();
+					location.buildFromXML(xml);
+					
+					alert(location.name);
+					jQuery.each(location.getDevices(), function(){
+						alert(this);
+					});*/
+					
+					/*var installation = new Installation();
+					installation.buildFromXML(xml);
+					
+					alert(installation.name);
+					
+					jQuery.each(installation.getDevices(), function(){
+						alert('Device: ' + this.name);
+					});
+					
+					jQuery.each(installation.getLocations(), function(){
+						alert('Location: ' + this.name);
+					});*/
+					
+					$.get('http://localhost:8080/SimpleRESTweb/resources/config.hausInstallation', function(xml) {
+					      var installation = $.xml2json(xml);
+					      jQuery.each(installation.Locations.Location, function(){
+					    	  alert(this.name);
+					      });
+					}); 
+				}
+		);
+		</script>
+</head>
+<body>
+
+</body>
+</html>

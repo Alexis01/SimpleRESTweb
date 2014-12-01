@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Prueba servicio REST</title>
+    <script src="/SimpleRESTweb/scripts/jquery-1.9.1.js"></script>
+    <script>
+   
+	    function req(opcion){
+	    	$("#textoServicio").html("");
+	    	$("#jsonServicio").html("");
+	    	if (opcion == 1){
+	    		$.ajax({
+	    	   	    url: 'http://localhost:8080/SimpleRESTweb/rest/mirecurso/prueba', // url del recurso
+	    	   	    type: "get", // podría ser get, post, put o delete.
+	    	   	    data: {}, // datos a pasar al servidor, en caso de necesitarlo
+	    	   	    success: function (r) {
+	    	   	        $("#textoServicio").html(r);
+	    	   	    }
+	    	   	});
+	    	}
+	    	else if (opcion == 2){
+	    		var url = "http://localhost:8080/SimpleRESTweb/rest/mirecurso/json";
+	    	   	$.getJSON(url, function(data) {  
+	    	    	  
+	    	   	   //data es el objeto Json, con el que obtengo los datos  
+	    	   	   //Vamos a recorrerlo y mostrarlo  
+	    	   	   $.each(data, function(index, objetoDelListado) { 
+	    	   	          $("#jsonServicio").html(objetoDelListado.clave);  
+	    	   		});  
+	    	   	});
+	    	}
+	    }
+    
+    </script>
+  </head>
+  <body>
+  	<input type="radio" name="opcion" onchange="req(1)">Opcion 1
+  	<input type="radio" name="opcion" onchange="req(2)">Opcion 2
+    <p>Texto devuelto por el servicio: <span id="textoServicio"></span></p>
+    <p>JSON devuelto por el servicio: <span id="jsonServicio"></span></p>
+  </body>
+</html>

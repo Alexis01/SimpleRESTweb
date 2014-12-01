@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InterfacesSpecification version="1.0.1" >
+	<Interfaces>
+		<!-- A C T U A T O R S -->
+		
+		<Interface id="HAUS_INTERFACE_KNX_AIR_CONDITIONING_1.0.1" name="AirConditioning" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_AIR_CONDITIONING_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_AIR_CONDITIONING_1.0.1_IS_COOLING" name="isCooling" description="" basicType="BOOLEAN">
+					<States>
+						<State name="COOLING" junctor="EQUAL" value="TRUE"/>
+						<State name="NOT COOLING" junctor="EQUAL" value="FALSE"/>
+					</States>
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions>
+				<InterfaceAction name="startCooling"/>
+				<InterfaceAction name="stopCooling"/>
+			</InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		
+		<Interface id="HAUS_INTERFACE_KNX_ALARM_LIGHT_1.0.1" name="AlarmLight" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_ALARM_LIGHT_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_ALARM_LIGHT_1.0.1_IS_LIGHTING" name="isLighting" description="" basicType="BOOLEAN">
+					<States>
+						<State name="LIGHTING" junctor="EQUAL" value="TRUE"/>
+						<State name="NOT LIGHTING" junctor="EQUAL" value="FALSE"/>
+					</States>
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions>
+				<InterfaceAction name="startLighting"/>
+				<InterfaceAction name="stopLighting"/>
+			</InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		
+		<Interface id="HAUS_INTERFACE_KNX_ALARM_SOUND_1.0.1" name="AlarmSound" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_ALARM_SOUND_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_ALARM_SOUND_1.0.1_IS_SOUNDING" name="isSounding" description="" basicType="BOOLEAN">
+					<States>
+						<State name="SOUNDING" junctor="EQUAL" value="TRUE"/>
+						<State name="NOT SOUNDING" junctor="EQUAL" value="FALSE"/>
+					</States>
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions>
+				<InterfaceAction name="startSounding"/>
+				<InterfaceAction name="stopSounding"/>
+			</InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		
+		<Interface id="HAUS_INTERFACE_KNX_BLIND_1.0.1" name="Blind" version="1.0.1"	technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_BLIND_1.0.1_ADDRESS" name="address" description="The KNX Group Address to move the blind (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+				<ConfigParameter id="HAUS_IIA_KNX_BLIND_1.0.1_STOP_ADDRESS" name="stopAddress" description="The KNX Group Address to stop the blind (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_BLIND_1.0.1_BLIND_POSITION" name="getPosition" description="" basicType="STRING">
+					<States>
+						<State name="UP" junctor="EQUAL" value="up"/>
+						<State name="DOWN" junctor="EQUAL" value="down"/>
+						<State name="UNKNOWN" junctor="EQUAL" value="unknown"/>
+					</States>
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions>
+				<InterfaceAction name="moveUp"/>
+				<InterfaceAction name="moveDown"/>
+				<InterfaceAction name="stop"/>
+			</InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		
+		
+		<Interface id="HAUS_INTERFACE_KNX_DOOR_1.0.1" name="Door" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_DOOR_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_DOOR_1.0.1_IS_OPEN" name="isOpen" description="" basicType="BOOLEAN">
+					<States>
+						<State name="OPEN" junctor="EQUAL" value="TRUE"/>
+						<State name="CLOSED" junctor="EQUAL" value="FALSE"/>
+					</States>
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions>
+				<InterfaceAction name="open"/>
+				<InterfaceAction name="close"/>
+			</InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		
+		
+		<Interface id="HAUS_INTERFACE_KNX_ELECTRO_VALVE_1.0.1" name="ElectroValve" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_ELECTRO_VALVE_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_ELECTRO_VALVE_1.0.1_IS_OPEN" name="isOpen" description="" basicType="BOOLEAN">
+					<States>
+						<State name="OPEN" junctor="EQUAL" value="TRUE"/>
+						<State name="CLOSED" junctor="EQUAL" value="FALSE"/>
+					</States>
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions>
+				<InterfaceAction name="open"/>
+				<InterfaceAction name="close"/>
+			</InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		
+		<Interface id="HAUS_INTERFACE_KNX_FAN_1.0.1" name="Fan" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_FAN_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_FAN_1.0.1_IS_VENTING" name="isVenting" description="" basicType="BOOLEAN">
+					<States>
+						<State name="VENTING" junctor="EQUAL" value="TRUE"/>
+						<State name="NOT VENTING" junctor="EQUAL" value="FALSE"/>
+					</States>
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions>
+				<InterfaceAction name="startVenting"/>
+				<InterfaceAction name="stopVenting"/>
+			</InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		<Interface id="HAUS_INTERFACE_KNX_GRADUAL_LIGHTING_1.0.1" name="GradualLighting" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_GRADUAL_LIGHTING_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_GRADUAL_LIGHTING_1.0.1_CURRENT_LIGHT_INTENSITY" name="currentIntensity" description="" basicType="INTEGER"/>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_GRADUAL_LIGHTING_1.0.1_IS_LIGHTING" name="isLighting" description="" basicType="BOOLEAN">
+					<States>
+						<State name="LIGHTING" junctor="EQUAL" value="TRUE"/>
+						<State name="NOT LIGHTING" junctor="EQUAL" value="FALSE"/>
+					</States>
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions>
+				<InterfaceAction name="switchOn"/>
+				<InterfaceAction name="switchOff"/>
+				<InterfaceAction name="stepUp"/>
+				<InterfaceAction name="stepDown"/>
+				<InterfaceAction name="setIntensity">
+					<InterfaceActionArguments>
+						<Argument id="HAUS_IAA_KNX_GRADUAL_LIGHTING_1.0.1_SET_INTENSITY_INTENSITY" name="newIntensity" description="The intensity to be set (in %)" basicType="INTEGER" required="TRUE" defaultValue="100" mask=""/>
+					</InterfaceActionArguments>
+				</InterfaceAction>
+			</InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		
+		<Interface id="HAUS_INTERFACE_KNX_HEATING_1.0.1" name="Heating" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_HEATING_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_HEATING_1.0.1_IS_HEATING" name="isHeating" description="" basicType="BOOLEAN">
+					<States>
+						<State name="HEATING" junctor="EQUAL" value="TRUE"/>
+						<State name="NOT HEATING" junctor="EQUAL" value="FALSE"/>
+					</States>
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions>
+				<InterfaceAction name="startHeating"/>
+				<InterfaceAction name="stopHeating"/>
+			</InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		<Interface id="HAUS_INTERFACE_KNX_LIGHTING_1.0.1" name="Lighting" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_LIGHTING_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_LIGHTING_1.0.1_IS_LIGHTING" name="isLighting" description="" basicType="BOOLEAN">
+					<States>
+						<State name="LIGHTING" junctor="EQUAL" value="TRUE"/>
+						<State name="NOT LIGHTING" junctor="EQUAL" value="FALSE"/>
+					</States>
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions>
+				<InterfaceAction name="switchOn"/>
+				<InterfaceAction name="switchOff">
+				</InterfaceAction>
+			</InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            <DeviceTypeSuggestion idRef="HAUS_DEVICE_TYPE_ACTUATOR_LIGHT"/>
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		<Interface id="HAUS_INTERFACE_KNX_LIGHT_SUPPLY_1.0.1" name="LightSupply" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_LIGHT_SUPPLY_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_LIGHT_SUPPLY_1.0.1_IS_SUPPLYING" name="isSupplying" description="" basicType="BOOLEAN">
+					<States>
+						<State name="SUPPLYING" junctor="EQUAL" value="TRUE"/>
+						<State name="NOT SUPPLYING" junctor="EQUAL" value="FALSE"/>
+					</States>
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions>
+				<InterfaceAction name="switchOn"/>
+				<InterfaceAction name="switchOff"/>
+			</InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		
+		<!-- S E N S O R S -->
+		
+		<Interface id="HAUS_INTERFACE_KNX_ANEMOMETER_1.0.1" name="Anemometer" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_ANEMOMETER_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_ANEMOMETER_1.0.1_WIND_SPEED" name="getCurrentWindSpeed" description="The wind speed in m/s" basicType="INTEGER"> 
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions> </InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		<Interface id="HAUS_INTERFACE_KNX_BAROMETER_1.0.1" name="Barometer" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_BAROMETER_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_BAROMETER_1.0.1_ATMOSPHERIC_PRESSURE" name="getCurrentAtmosphericPressure" description="The current atmospheric pressure in mBar" basicType="INTEGER"> 
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions> </InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		<Interface id="HAUS_INTERFACE_KNX_BRIGHTNESS_METER_1.0.1" name="BrightnessMeter" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_BRIGHTNESS_METER_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_BRIGHTNESS_METER_1.0.1_CURRENT_LUXES" name="getCurrentLuxes" description="The current luxes" basicType="INTEGER"> 
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions> </InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		<Interface id="HAUS_INTERFACE_KNX_CONTACT_DETECTOR_1.0.1" name="ContactDetector" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_CONTACT_DETECTOR_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_CONTACT_DETECTOR_1.0.1_IS_CONTACT_DETECTED" name="isContactDetected" description="" basicType="BOOLEAN">
+					<States>
+						<State name="CONTACT DETECTED" junctor="EQUAL" value="TRUE"/>
+						<State name="CONTACT NOT DETECTED" junctor="EQUAL" value="FALSE"/>
+					</States>
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions> </InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		<Interface id="HAUS_INTERFACE_KNX_MOVEMENT_DETECTOR_1.0.1" name="MovementDetector" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_MOVEMENT_DETECTOR_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_PRESENCE_MOVEMENT_1.0.1_IS_MOVEMENT_DETECTED" name="isMovementDetected" description="" basicType="BOOLEAN">
+					<States>
+						<State name="MOVEMENT DETECTED" junctor="EQUAL" value="TRUE"/>
+						<State name="MOVEMENT NOT DETECTED" junctor="EQUAL" value="FALSE"/>
+					</States>
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions> </InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		<Interface id="HAUS_INTERFACE_KNX_PLUVIOMETER_1.0.1" name="Pluviometer" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_PLUVIOMETER_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_PLUVIOMETER_1.0.1_CURRENT_MM" name="getCurrentMm" description="The current mm of water" basicType="FLOAT"> 
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions> </InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		<Interface id="HAUS_INTERFACE_KNX_PRESENCE_DETECTOR_1.0.1" name="PresenceDetector" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_PRESENCE_DETECTOR_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_PRESENCE_DETECTOR_1.0.1_IS_PRESENCE_DETECTED" name="isPresenceDetected" description="" basicType="BOOLEAN">
+					<States>
+						<State name="PRESENCE DETECTED" junctor="EQUAL" value="TRUE"/>
+						<State name="PRESENCE NOT DETECTED" junctor="EQUAL" value="FALSE"/>
+					</States>
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions> </InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		<Interface id="HAUS_INTERFACE_KNX_RAIN_DETECTOR_1.0.1" name="RainDetector" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_RAIN_DETECTOR_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_RAIN_DETECTOR_1.0.1_IS_RAIN_DETECTED" name="isRainDetected" description="" basicType="BOOLEAN">
+					<States>
+						<State name="RAIN DETECTED" junctor="EQUAL" value="TRUE"/>
+						<State name="RAIN NOT DETECTED" junctor="EQUAL" value="FALSE"/>
+					</States>
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions> </InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+		
+		<Interface id="HAUS_INTERFACE_KNX_THERMOMETER_1.0.1" name="Thermometer" version="1.0.1" technology="HAUS_TECHNOLOGY_KNX">
+			<ConfigParameters>
+				<ConfigParameter id="HAUS_IIA_KNX_THERMOMETER_1.0.1_ADDRESS" name="address" description="The KNX Group Address (Format: X.X.X)" basicType="STRING" mandatory="TRUE"/>
+			</ConfigParameters>
+			<InterfaceProperties>
+				<InterfaceProperty id="HAUS_INTERFACE_PROPERTY_KNX_THERMOMETER_1.0.1_CURRENT_TEMPERATURE" name="getCurrentTemperature" description="The Celsius degrees" basicType="FLOAT"> 
+				</InterfaceProperty>
+			</InterfaceProperties>
+			<InterfaceActions> </InterfaceActions>
+                        <DeviceTypeSuggestions>
+                            
+                        </DeviceTypeSuggestions>
+		</Interface>
+	</Interfaces>
+
+
+
+
+
+	<DeviceTypes>
+		<DeviceType id="HAUS_DEVICE_TYPE_ACTUATOR_LIGHT" name="aLight" img="light.png"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_ACTUATOR_ALARM_SYSTEM" name="aAlarmSystem" img="alarmSystem.gif"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_ACTUATOR_GRADUAL_LIGHT" name="aGradualLight" img="gradualLighting.gif"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_ACTUATOR_ALARM_LIGHT" name="aAlarmLight" img="alarmLight.gif"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_ACTUATOR_ALARM_SOUND" name="aAlarmSound" img="buzzer.png"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_ACTUATOR_BLIND" name="aBlind" img="blind.png"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_ACTUATOR_DOOR" name="aDoor" img="door.png"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_ACTUATOR_AIR_CONDITIONING" name="aAirConditioning" img="airConditioning.png"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_ACTUATOR_HEATING" name="aHeating" img="heating.png"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_ACTUATOR_FAN" name="aFan" img="fan.png"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_ACTUATOR_VIDEO_RECORDER" name="aVideoRecorder" img="videorecorder.png"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_SENSOR_THERMOSTAT" name="sThermostat" img="thermostat.png"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_SENSOR_CONTACT" name="sContact" img="contact.jpg"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_SENSOR_PRESENCE" name="sPresence" img="presence.png"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_SENSOR_MOVEMENT" name="sMovement" img="movement.png"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_SENSOR_ANEMOMETER" name="sAnemometer" img="anemometer.jpeg"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_SENSOR_RAIN" name="sRainDetector" img="rainDetector.png"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_SENSOR_PLUVIOMETER" name="sPluviometer" img="pluviometer.png"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_SENSOR_BRIGHTNESS_METER" name="sBrightnessMeter" img="brightness.png"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_SENSOR_BAROMETER" name="sBarometer" img="barometer.png"/>
+		
+		<DeviceType id="HAUS_DEVICE_TYPE_SENSOR_METEOROLOGICAL_STATION" name="sMeteorologicalStation" img="meteorologicalStation.gif"/>
+                
+                <DeviceType id="HAUS_DEVICE_TYPE_SENSOR_OTHER" name="otherDevice" img="otherDevice.png"/>
+	</DeviceTypes>
+
+	<LocationTypes>
+		<LocationType id="HAUS_LOCATION_TYPE_ROOM" name="room" img="room.png"/>
+		<LocationType id="HAUS_LOCATION_TYPE_BEDROOM" name="bedroom" img="bedroom.gif"/>
+		<LocationType id="HAUS_LOCATION_TYPE_BATHROOM" name="bathroom" img="bathroom.gif"/>
+		<LocationType id="HAUS_LOCATION_TYPE_KITCHEN" name="kitchen" img="kitchen.png"/>
+		<LocationType id="HAUS_LOCATION_TYPE_CORRIDOR" name="corridor" img="corridor.png"/>
+		<LocationType id="HAUS_LOCATION_TYPE_GARDEN" name="garden" img="garden.png"/>
+		<LocationType id="HAUS_LOCATION_TYPE_OFFICE" name="office" img="office.png"/>
+		<LocationType id="HAUS_LOCATION_TYPE_SITTING_ROOM" name="sittingRoom" img="sittingRoom.gif"/>
+		<LocationType id="HAUS_LOCATION_TYPE_DINNING_ROOM" name="dinningRoom" img="diningRoom.png"/>
+		<LocationType id="HAUS_LOCATION_TYPE_BALCONY" name="balcony" img="balcony.png"/>
+		<LocationType id="HAUS_LOCATION_TYPE_GARAGE" name="garage" img="garage.gif"/>
+		<LocationType id="HAUS_LOCATION_TYPE_FLOOR_PLANT" name="floorPlant" img="floorPlant.png"/>
+		<LocationType id="HAUS_LOCATION_TYPE_HOME" name="home" img="home.gif"/>
+		<LocationType id="HAUS_LOCATION_TYPE_OTHER_LOCATION" name="otherLocation" img="otherLocation.png"/>
+	</LocationTypes>
+
+	<Technologies>
+		<Technology id="HAUS_TECHNOLOGY_KNX" name="KNX"/>
+                <Technology id="HAUS_TECHNOLOGY_ARDUINO" name="Arduino"/>
+	</Technologies>
+
+</InterfacesSpecification>

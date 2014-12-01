@@ -1,0 +1,60 @@
+.general{
+	/*background-color:rgb(86, 186, 190);*/
+	background: url('../images/Background.png');
+	min-width: 415px;
+	width:20%;
+	margin:auto;
+	padding: 30px;
+}
+
+.userInfo{
+	font-style: 1.2em;
+	margin-bottom: 10px;
+	border-bottom: 1px solid black;
+}
+.estancias{}
+
+/*By Alexis
+*/
+.imgGeneric{
+	width:100%; 
+	height:100%;
+	} 
+.divGeneric{
+}
+.imgCdomot{
+	width:82%; 
+	height:100%;
+}
+.imgFlechas{
+	width:15%;
+	height:100%;
+}
+/*----------CLASES CON LA IMAGEN DE LOS DISTINTOS DISPOSITIVOS-----------*/
+
+/*Locations Images*/
+.Home{
+	
+}
+.Garden{
+	
+}
+.Kitchen{
+	
+	background: url('../images/Kitchen.png') no-repeat;
+	
+}
+.Bedroom{
+	background: url('../images/Bedroom.png') no-repeat;
+	
+}
+.Office{
+	
+}
+.Hall{
+	background: url('../images/Hall.png') no-repeat;
+}
+.heighGeneric{
+	height:170px;
+}
+/*Dispositivos Images*/
